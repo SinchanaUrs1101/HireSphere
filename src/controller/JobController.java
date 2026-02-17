@@ -11,14 +11,14 @@ public class JobController {
         this.jobDAO = new JobDAO();
     }
 
-    public boolean postJob(String title, String description, String company, String location, double salary, int recruiterId) {
+    public boolean postJob(String title, String description, String company, int postedBy) {
         if (title == null || title.isEmpty() || description == null || description.isEmpty() || 
-            company == null || company.isEmpty() || location == null || location.isEmpty() || salary <= 0) {
-            System.out.println("Invalid input: All fields are required and salary must be positive.");
+            company == null || company.isEmpty() || postedBy <= 0) {
+            System.out.println("Invalid input: All fields are required.");
             return false;
         }
 
-        Job job = new Job(title, description, company, location, salary, recruiterId);
+        Job job = new Job(title, description, company, postedBy);
         return jobDAO.addJob(job);
     }
 

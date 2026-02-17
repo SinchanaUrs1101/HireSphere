@@ -1,28 +1,28 @@
 package model;
 
 public class User {
-    private int userId;
+    private int id;
     private String name;
     private String email;
     private String password;
-    private String userType; // "Recruiter" or "JobSeeker"
+    private String role; // "Recruiter" or "JobSeeker"
 
     public User() {
     }
 
-    public User(String name, String email, String password, String userType) {
+    public User(String name, String email, String password, String role) {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.userType = userType;
+        this.role = role;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getId() {
+        return id;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -49,11 +49,11 @@ public class User {
         this.password = password;
     }
 
-    public String getUserType() {
-        return userType;
+    public String getRole() {
+        return role;
     }
 
-    public void setUserType(String userType) {
-        this.userType = userType;
+    public void setRole(String role) {
+        this.role = role;
     }
 }

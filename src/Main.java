@@ -10,7 +10,7 @@ public class Main {
         AuthController authController = new AuthController();
         JobController jobController = new JobController();
 
-        // Example: Register a user
+        // Example: Register users and post jobs
         System.out.println("=== HireSphere Application ===\n");
 
         // Register a recruiter
@@ -24,20 +24,18 @@ public class Main {
         // Login user
         User loggedInUser = authController.loginUser("john@company.com", "pass123");
         if (loggedInUser != null) {
-            System.out.println("\nLogged in as: " + loggedInUser.getName() + " (" + loggedInUser.getUserType() + ")");
-        }
+            System.out.println("\nLogged in as: " + loggedInUser.getName() + " (" + loggedInUser.getRole() + ")");
 
-        // Post a job
-        if (loggedInUser != null && loggedInUser.getUserType().equals("Recruiter")) {
-            boolean jobPosted = jobController.postJob(
-                "Java Developer",
-                "We are looking for an experienced Java developer.",
-                "Tech Company",
-                "New York",
-                120000,
-                loggedInUser.getUserId()
-            );
-            System.out.println("Job posted: " + jobPosted);
+            // Post a job
+            if (loggedInUser.getRole().equals("Recruiter")) {
+                boolean jobPosted = jobController.postJob(
+                    "Java Developer",
+                    "We are looking for an experienced Java developer.",
+                    "Tech Company",
+                    loggedInUser.getId()
+                );
+                System.out.println("Job posted: " + jobPosted);
+            }
         }
 
         // Get all jobs

@@ -1,38 +1,32 @@
 package model;
 
-import java.time.LocalDate;
-
 public class Application {
-    private int applicationId;
-    private int jobSeekerId;
+    private int id;
+    private int userId;
     private int jobId;
-    private String status; // "Pending", "Accepted", "Rejected"
-    private LocalDate appliedDate;
 
     public Application() {
     }
 
-    public Application(int jobSeekerId, int jobId, String status, LocalDate appliedDate) {
-        this.jobSeekerId = jobSeekerId;
+    public Application(int userId, int jobId) {
+        this.userId = userId;
         this.jobId = jobId;
-        this.status = status;
-        this.appliedDate = appliedDate;
     }
 
-    public int getApplicationId() {
-        return applicationId;
+    public int getId() {
+        return id;
     }
 
-    public void setApplicationId(int applicationId) {
-        this.applicationId = applicationId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getJobSeekerId() {
-        return jobSeekerId;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setJobSeekerId(int jobSeekerId) {
-        this.jobSeekerId = jobSeekerId;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public int getJobId() {
@@ -41,21 +35,5 @@ public class Application {
 
     public void setJobId(int jobId) {
         this.jobId = jobId;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public LocalDate getAppliedDate() {
-        return appliedDate;
-    }
-
-    public void setAppliedDate(LocalDate appliedDate) {
-        this.appliedDate = appliedDate;
     }
 }

@@ -10,14 +10,14 @@ public class AuthController {
         this.userDAO = new UserDAO();
     }
 
-    public boolean registerUser(String name, String email, String password, String userType) {
+    public boolean registerUser(String name, String email, String password, String role) {
         if (name == null || name.isEmpty() || email == null || email.isEmpty() || 
-            password == null || password.isEmpty() || userType == null || userType.isEmpty()) {
+            password == null || password.isEmpty() || role == null || role.isEmpty()) {
             System.out.println("Invalid input: All fields are required.");
             return false;
         }
 
-        User user = new User(name, email, password, userType);
+        User user = new User(name, email, password, role);
         return userDAO.registerUser(user);
     }
 

@@ -1,32 +1,28 @@
 package model;
 
 public class Job {
-    private int jobId;
+    private int id;
     private String title;
     private String description;
     private String company;
-    private String location;
-    private double salary;
-    private int recruiterId;
+    private int postedBy;
 
     public Job() {
     }
 
-    public Job(String title, String description, String company, String location, double salary, int recruiterId) {
+    public Job(String title, String description, String company, int postedBy) {
         this.title = title;
         this.description = description;
         this.company = company;
-        this.location = location;
-        this.salary = salary;
-        this.recruiterId = recruiterId;
+        this.postedBy = postedBy;
     }
 
-    public int getJobId() {
-        return jobId;
+    public int getId() {
+        return id;
     }
 
-    public void setJobId(int jobId) {
-        this.jobId = jobId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -53,27 +49,11 @@ public class Job {
         this.company = company;
     }
 
-    public String getLocation() {
-        return location;
+    public int getPostedBy() {
+        return postedBy;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
-    public int getRecruiterId() {
-        return recruiterId;
-    }
-
-    public void setRecruiterId(int recruiterId) {
-        this.recruiterId = recruiterId;
+    public void setPostedBy(int postedBy) {
+        this.postedBy = postedBy;
     }
 }

@@ -7,15 +7,13 @@ import java.util.*;
 public class JobDAO {
 
     public boolean addJob(Job job) {
-        String sql = "INSERT INTO jobs (title, description, company, location, salary, recruiter_id) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO jobs (title, description, company, posted_by) VALUES (?, ?, ?, ?)";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, job.getTitle());
             pstmt.setString(2, job.getDescription());
             pstmt.setString(3, job.getCompany());
-            pstmt.setString(4, job.getLocation());
-            pstmt.setDouble(5, job.getSalary());
-            pstmt.setInt(6, job.getRecruiterId());
+            pstmt.setInt(4, job.getPostedBy());
             return pstmt.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -32,13 +30,11 @@ public class JobDAO {
 
             while (rs.next()) {
                 Job job = new Job();
-                job.setJobId(rs.getInt("job_id"));
+                job.setId(rs.getInt("id"));
                 job.setTitle(rs.getString("title"));
                 job.setDescription(rs.getString("description"));
                 job.setCompany(rs.getString("company"));
-                job.setLocation(rs.getString("location"));
-                job.setSalary(rs.getDouble("salary"));
-                job.setRecruiterId(rs.getInt("recruiter_id"));
+                job.setPostedBy(rs.getInt("posted_by"));
                 jobs.add(job);
             }
         } catch (SQLException e) {
@@ -48,7 +44,7 @@ public class JobDAO {
     }
 
     public Job getJobById(int jobId) {
-        String sql = "SELECT * FROM jobs WHERE job_id = ?";
+        String sql = "SELECT * FROM jobs WHERE id = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, jobId);
@@ -56,13 +52,11 @@ public class JobDAO {
 
             if (rs.next()) {
                 Job job = new Job();
-                job.setJobId(rs.getInt("job_id"));
+                job.setId(rs.getInt("id"));
                 job.setTitle(rs.getString("title"));
                 job.setDescription(rs.getString("description"));
                 job.setCompany(rs.getString("company"));
-                job.setLocation(rs.getString("location"));
-                job.setSalary(rs.getDouble("salary"));
-                job.setRecruiterId(rs.getInt("recruiter_id"));
+                job.setPostedBy(rs.getInt("posted_by"));
                 return job;
             }
         } catch (SQLException e) {
@@ -72,7 +66,7 @@ public class JobDAO {
     }
 
     public boolean deleteJob(int jobId) {
-        String sql = "DELETE FROM jobs WHERE job_id = ?";
+        String sql = "DELETE FROM jobs WHERE id = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, jobId);
