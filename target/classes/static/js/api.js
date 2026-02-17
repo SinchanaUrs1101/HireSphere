@@ -1,5 +1,12 @@
-// API Base URL
-const API_BASE_URL = 'http://localhost:8080/api';
+// API Base URL — use current browser origin when available (works with forwarded URLs)
+const API_BASE_URL = (function() {
+    try {
+        if (window && window.location && window.location.origin) {
+            return window.location.origin + '/api';
+        }
+    } catch (e) {}
+    return 'http://localhost:8080/api';
+})();
 
 // API utility functions
 async function apiCall(endpoint, method = 'GET', body = null) {
