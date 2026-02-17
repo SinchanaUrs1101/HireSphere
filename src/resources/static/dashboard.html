@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireSphere - Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">HireSphere</div>
+            <div class="nav-right">
+                <span id="userGreeting" class="user-greeting"></span>
+                <button class="btn btn-logout" onclick="handleLogout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="avatar">
+                    <span id="avatarInitial">U</span>
+                </div>
+                <h3 id="profileName">User</h3>
+                <p id="profileRole">Role</p>
+            </div>
+
+            <div class="nav-menu">
+                <a href="#" class="nav-item active" data-tab="jobs" onclick="switchTab(event, 'jobs')">
+                    <span class="icon">📋</span>
+                    <span>All Jobs</span>
+                </a>
+                <a href="#" id="postJobTab" class="nav-item hidden" data-tab="post-job" onclick="switchTab(event, 'post-job')">
+                    <span class="icon">➕</span>
+                    <span>Post Job</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="profile" onclick="switchTab(event, 'profile')">
+                    <span class="icon">👤</span>
+                    <span>Profile</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="main-area">
+            <!-- Jobs Section -->
+            <div id="jobs" class="tab-content active">
+                <h2>Available Jobs</h2>
+                <div id="jobsList" class="jobs-grid">
+                    <!-- Jobs will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Post Job Section -->
+            <div id="post-job" class="tab-content">
+                <h2>Post a New Job</h2>
+                <form class="job-form" onsubmit="handlePostJob(event)">
+                    <div class="form-group">
+                        <label for="jobTitle">Job Title</label>
+                        <input type="text" id="jobTitle" placeholder="e.g., Senior Java Developer" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobCompany">Company</label>
+                        <input type="text" id="jobCompany" placeholder="e.g., Tech Company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobDescription">Job Description</label>
+                        <textarea id="jobDescription" placeholder="Enter job description..." rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post Job</button>
+                    <div id="postJobMessage" class="message"></div>
+                </form>
+            </div>
+
+            <!-- Profile Section -->
+            <div id="profile" class="tab-content">
+                <h2>User Profile</h2>
+                <div class="profile-info">
+                    <div class="info-group">
+                        <label>Name:</label>
+                        <p id="profileNameDisplay">-</p>
+                    </div>
+                    <div class="info-group">
+                        <label>Email:</label>
+                        <p id="profileEmailDisplay">-</p>
+                    </div>
+                    <div class="info-group">
+                        <label>Role:</label>
+                        <p id="profileRoleDisplay">-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Detail Modal -->
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeJobModal()">&times;</span>
+            <div id="jobDetails"></div>
+            <div id="applySection" class="apply-section">
+                <button class="btn btn-primary" onclick="handleApplyJob()">Apply for this Job</button>
+            </div>
+            <div id="applyMessage" class="message"></div>
+        </div>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
