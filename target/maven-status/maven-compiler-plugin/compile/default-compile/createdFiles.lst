@@ -1,6 +1,7 @@
 api/PostJobRequest.class
 model/Job.class
 api/LoginRequest.class
+config/CorsConfig.class
 dao/DBConnection.class
 api/JobRestController.class
 controller/AuthController.class

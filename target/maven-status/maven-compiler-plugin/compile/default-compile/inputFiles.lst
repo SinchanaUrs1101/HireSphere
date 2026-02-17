@@ -6,6 +6,7 @@
 /workspaces/HireSphere/src/model/User.java
 /workspaces/HireSphere/src/Main.java
 /workspaces/HireSphere/src/controller/JobController.java
+/workspaces/HireSphere/src/config/CorsConfig.java
 /workspaces/HireSphere/src/dao/DBConnection.java
 /workspaces/HireSphere/src/config/HireSphereApplication.java
 /workspaces/HireSphere/src/dao/JobDAO.java
