@@ -1,4 +1,5 @@
 api/PostJobRequest.class
+api/FaviconController.class
 model/Job.class
 api/LoginRequest.class
 config/CorsConfig.class
