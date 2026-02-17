@@ -55,3 +55,211 @@ WARNING: Restricted methods will be blocked in a future release unless native ac
 2026-02-17 22:15:48.441 DEBUG 45334 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/auth/register", parameters={}
 2026-02-17 22:15:48.443 DEBUG 45334 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.AuthRestController#register(RegisterRequest)
 2026-02-17 22:15:48.453 DEBUG 45334 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:18:05.089 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:18:05.093 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:18:05.094 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:18:05.094 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:18:05.095 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:18:05.096 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:18:05.097 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:18:05.098 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:18:05.407 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
+2026-02-17 22:18:05.411 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:18:05.414 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:18:05.434 DEBUG 45334 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/js/api.js", parameters={}
+2026-02-17 22:18:05.435 DEBUG 45334 --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:18:05.437 DEBUG 45334 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/js/auth.js", parameters={}
+2026-02-17 22:18:05.437 DEBUG 45334 --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:18:05.438 DEBUG 45334 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:18:05.439 DEBUG 45334 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:18:05.611 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2026-02-17 22:18:05.613 DEBUG 45334 --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:18:05.614 DEBUG 45334 --- [io-8080-exec-10] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2026-02-17 22:18:05.616 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-02-17 22:18:05.617 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2026-02-17 22:18:05.619 DEBUG 45334 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-02-17 22:18:05.643 DEBUG 45334 --- [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-02-17 22:18:05.645 DEBUG 45334 --- [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 17 22:18:05 UTC 2026, status=404, error=Not Found, path=/favicon.ico}]
+2026-02-17 22:18:05.719 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2026-02-17 22:19:14.200 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:14.208 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:14.209 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:14.209 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:14.209 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:14.213 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:14.218 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:14.218 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:14.340 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/js/auth.js", parameters={}
+2026-02-17 22:19:14.341 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:14.343 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:14.466 DEBUG 45334 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/js/api.js", parameters={}
+2026-02-17 22:19:14.467 DEBUG 45334 --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:14.471 DEBUG 45334 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:14.492 DEBUG 45334 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
+2026-02-17 22:19:14.495 DEBUG 45334 --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:14.498 DEBUG 45334 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:14.570 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2026-02-17 22:19:14.571 DEBUG 45334 --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:14.573 DEBUG 45334 --- [io-8080-exec-10] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2026-02-17 22:19:14.573 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-02-17 22:19:14.574 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2026-02-17 22:19:14.575 DEBUG 45334 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-02-17 22:19:14.576 DEBUG 45334 --- [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-02-17 22:19:14.576 DEBUG 45334 --- [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 17 22:19:14 UTC 2026, status=404, error=Not Found, path=/favicon.ico}]
+2026-02-17 22:19:14.578 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2026-02-17 22:19:18.119 DEBUG 45334 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:18.122 DEBUG 45334 --- [nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:18.124 DEBUG 45334 --- [nio-8080-exec-2] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:18.124 DEBUG 45334 --- [nio-8080-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:18.125 DEBUG 45334 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:18.126 DEBUG 45334 --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.132 DEBUG 45334 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:18.134 DEBUG 45334 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:18.312 DEBUG 45334 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/js/api.js", parameters={}
+2026-02-17 22:19:18.313 DEBUG 45334 --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.314 DEBUG 45334 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:18.316 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
+2026-02-17 22:19:18.318 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.320 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:18.324 DEBUG 45334 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/js/auth.js", parameters={}
+2026-02-17 22:19:18.325 DEBUG 45334 --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.327 DEBUG 45334 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:18.435 DEBUG 45334 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2026-02-17 22:19:18.436 DEBUG 45334 --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.436 DEBUG 45334 --- [nio-8080-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2026-02-17 22:19:18.437 DEBUG 45334 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-02-17 22:19:18.437 DEBUG 45334 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2026-02-17 22:19:18.437 DEBUG 45334 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-02-17 22:19:18.438 DEBUG 45334 --- [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-02-17 22:19:18.439 DEBUG 45334 --- [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 17 22:19:18 UTC 2026, status=404, error=Not Found, path=/favicon.ico}]
+2026-02-17 22:19:18.441 DEBUG 45334 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2026-02-17 22:19:18.599 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:18.601 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:18.601 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:18.601 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:18.601 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:18.602 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.603 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:18.604 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:18.642 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:18.643 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:18.644 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:18.644 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:18.645 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:18.646 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.649 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:18.650 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:18.706 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:18.708 DEBUG 45334 --- [io-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:18.708 DEBUG 45334 --- [io-8080-exec-10] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:18.708 DEBUG 45334 --- [io-8080-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:18.708 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:18.709 DEBUG 45334 --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.710 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:18.710 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:18.722 DEBUG 45334 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:18.723 DEBUG 45334 --- [nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:18.723 DEBUG 45334 --- [nio-8080-exec-2] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:18.724 DEBUG 45334 --- [nio-8080-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:18.725 DEBUG 45334 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:18.727 DEBUG 45334 --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.734 DEBUG 45334 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:18.737 DEBUG 45334 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:18.746 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:18.747 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:18.749 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:18.749 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:18.749 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:18.750 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.753 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:18.755 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:18.782 DEBUG 45334 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:18.784 DEBUG 45334 --- [nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:18.786 DEBUG 45334 --- [nio-8080-exec-4] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:18.786 DEBUG 45334 --- [nio-8080-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:18.786 DEBUG 45334 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:18.787 DEBUG 45334 --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.790 DEBUG 45334 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:18.792 DEBUG 45334 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:18.808 DEBUG 45334 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:18.809 DEBUG 45334 --- [nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:18.809 DEBUG 45334 --- [nio-8080-exec-5] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:18.809 DEBUG 45334 --- [nio-8080-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:18.810 DEBUG 45334 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:18.810 DEBUG 45334 --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.811 DEBUG 45334 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:18.811 DEBUG 45334 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:18.844 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:18.845 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:18.845 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:18.846 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:18.846 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:18.847 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:18.848 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:18.849 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:19.014 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:19.015 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:19.015 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:19.015 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:19.015 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:19.016 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:19.017 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:19.018 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:19.090 DEBUG 45334 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:19.092 DEBUG 45334 --- [nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:19.093 DEBUG 45334 --- [nio-8080-exec-9] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:19.093 DEBUG 45334 --- [nio-8080-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:19.093 DEBUG 45334 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:19.094 DEBUG 45334 --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:19.098 DEBUG 45334 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:19.098 DEBUG 45334 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:19.120 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:19.123 DEBUG 45334 --- [io-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:19.123 DEBUG 45334 --- [io-8080-exec-10] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:19.124 DEBUG 45334 --- [io-8080-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:19.125 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:19.128 DEBUG 45334 --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:19.132 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:19.133 DEBUG 45334 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:19.209 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:19.212 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:19.212 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:19.212 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:19.213 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:19.213 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:19.216 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:19.216 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:19.362 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:19.364 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:19.367 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:19.367 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:19.367 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:19.368 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:19.370 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:19.372 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:20.453 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-02-17 22:19:20.455 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-02-17 22:19:20.455 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-02-17 22:19:20.455 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-02-17 22:19:20.456 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-02-17 22:19:20.456 DEBUG 45334 --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:20.458 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-02-17 22:19:20.459 DEBUG 45334 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:20.695 DEBUG 45334 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
+2026-02-17 22:19:20.697 DEBUG 45334 --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:20.702 DEBUG 45334 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:20.750 DEBUG 45334 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/js/auth.js", parameters={}
+2026-02-17 22:19:20.751 DEBUG 45334 --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:20.752 DEBUG 45334 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:20.756 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/js/api.js", parameters={}
+2026-02-17 22:19:20.757 DEBUG 45334 --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:20.758 DEBUG 45334 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:19:20.893 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2026-02-17 22:19:20.894 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-17 22:19:20.896 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2026-02-17 22:19:20.898 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-02-17 22:19:20.899 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2026-02-17 22:19:20.899 DEBUG 45334 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-02-17 22:19:20.900 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-02-17 22:19:20.900 DEBUG 45334 --- [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Feb 17 22:19:20 UTC 2026, status=404, error=Not Found, path=/favicon.ico}]
+2026-02-17 22:19:20.901 DEBUG 45334 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
