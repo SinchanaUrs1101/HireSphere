@@ -1,0 +1,10 @@
+/workspaces/HireSphere/src/Main.java
+/workspaces/HireSphere/src/controller/JobController.java
+/workspaces/HireSphere/src/model/Application.java
+/workspaces/HireSphere/src/controller/AuthController.java
+/workspaces/HireSphere/src/dao/DBConnection.java
+/workspaces/HireSphere/src/dao/ApplicationDAO.java
+/workspaces/HireSphere/src/dao/JobDAO.java
+/workspaces/HireSphere/src/dao/UserDAO.java
+/workspaces/HireSphere/src/model/Job.java
+/workspaces/HireSphere/src/model/User.java

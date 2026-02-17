@@ -1,96 +1,147 @@
 # HireSphere Database & Project Setup Guide
 
-## Database Setup
+## Quick Start (Using Docker & Maven)
 
 ### Prerequisites
-- MySQL Server installed and running
-- MySQL Client utilities
+- Docker installed and running
+- Maven installed
+- Java 11+
 
-### Step 1: Create Database
-Run the following SQL commands:
+### Setup Steps
 
-```sql
-CREATE DATABASE IF NOT EXISTS hiresphere;
-USE hiresphere;
-
-CREATE TABLE IF NOT EXISTS users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100),
-    email VARCHAR(100) UNIQUE,
-    password VARCHAR(100),
-    role VARCHAR(20)
-);
-
-CREATE TABLE IF NOT EXISTS jobs (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(100),
-    description TEXT,
-    company VARCHAR(100),
-    posted_by INT,
-    FOREIGN KEY (posted_by) REFERENCES users(id)
-);
-
-CREATE TABLE IF NOT EXISTS applications (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT,
-    job_id INT,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (job_id) REFERENCES jobs(id)
-);
+#### Step 1: Start MySQL with Docker
+```bash
+docker run -d --name hiresphere-db \
+  -e MYSQL_ROOT_PASSWORD=password \
+  -e MYSQL_DATABASE=hiresphere \
+  -p 3306:3306 \
+  mysql:8.0
 ```
 
-### Step 2: Run SQL Script
-Or use the provided script:
+#### Step 2: Wait for MySQL to Initialize
+```bash
+sleep 10
+```
+
+#### Step 3: Import Database Schema
+```bash
+docker exec -i hiresphere-db mysql -uroot -ppassword hiresphere < database.sql
+```
+
+#### Step 4: Build Project with Maven
+```bash
+cd /workspaces/HireSphere
+mvn clean package -DskipTests
+```
+
+#### Step 5: Run Application
+```bash
+java -jar target/hiresphere-1.0.0.jar
+```
+
+### Expected Output
+```
+=== HireSphere Application ===
+
+Recruiter registered: true
+Job Seeker registered: true
+
+Logged in as: John Recruiter (Recruiter)
+Job posted: true
+
+All Jobs:
+- Java Developer at Tech Company
+```
+
+## Manual Setup (Without Docker)
+
+### Database Setup (Local MySQL)
+
+#### Step 1: Install MySQL
+```bash
+sudo apt-get install mysql-server mysql-client
+```
+
+#### Step 2: Create Database
 ```bash
 mysql -u root -p < database.sql
 ```
 
-### Step 3: Update MySQL Connection (if needed)
-Edit `src/dao/DBConnection.java` and update:
-- URL: `jdbc:mysql://localhost:3306/hiresphere`
-- USER: `root` (your MySQL username)
-- PASSWORD: `password` (your MySQL password)
-
-### Step 4: Compile Project
-```bash
-cd /workspaces/HireSphere
-javac -d bin src/model/*.java src/dao/*.java src/controller/*.java src/*.java
+#### Step 3: Verify Connection
+Edit `src/dao/DBConnection.java`:
+```java
+private static final String URL = "jdbc:mysql://localhost:3306/hiresphere";
+private static final String USER = "root";
+private static final String PASSWORD = "your_password";
 ```
 
-### Step 5: Run Project
+#### Step 4: Build with Maven
 ```bash
-cd /workspaces/HireSphere
-java -cp bin:mysql-connector-java-8.0.xx.jar Main
+mvn clean package -DskipTests
+```
+
+#### Step 5: Run Application
+```bash
+java -jar target/hiresphere-1.0.0.jar
 ```
 
 ## Project Structure
 ```
 HireSphere/
 ├── src/
-│   ├── model/         # Data models (User, Job, Application)
-│   ├── dao/           # Database access objects
-│   ├── controller/    # Business logic (AuthController, JobController)
-│   └── Main.java      # Entry point
-├── bin/               # Compiled classes
-├── database.sql       # Database schema
-└── README.md          # This file
+│   ├── model/              # Data models (User, Job, Application)
+│   ├── dao/                # Database access objects + DBConnection
+│   ├── controller/         # Business logic (AuthController, JobController)
+│   └── Main.java           # Entry point
+├── bin/                    # Compiled classes (local compile)
+├── target/                 # Maven build output
+│   └── hiresphere-1.0.0.jar  # Executable JAR with dependencies
+├── pom.xml                 # Maven configuration
+├── database.sql            # Database schema
+├── SETUP.md                # This file
+└── README.md
 ```
 
 ## Features
 - **User Management**: Register and login users (Recruiter/JobSeeker)
-- **Job Posting**: Post job listings (recruiters only)
-- **Job Applications**: Job seekers can apply for jobs
+- **Job Posting**: Post job listings
+- **Job Applications**: Apply for jobs
 - **Job Search**: View all available jobs
 
-## Database Credentials (Default)
+## Database Credentials
 - Username: `root`
 - Password: `password`
 - Database: `hiresphere`
 - Host: `localhost:3306`
 
-## MySQL JDBC Driver
-Download from: https://dev.mysql.com/downloads/connector/j/
-Place the JAR in your classpath or appropriate location.
+## Verify Database Setup
+
+### Check Tables
+```bash
+docker exec hiresphere-db mysql -uroot -ppassword hiresphere -e "SHOW TABLES;"
+```
+
+### View Users
+```bash
+docker exec hiresphere-db mysql -uroot -ppassword hiresphere -e "SELECT * FROM users;"
+```
+
+### View Jobs
+```bash
+docker exec hiresphere-db mysql -uroot -ppassword hiresphere -e "SELECT * FROM jobs;"
+```
+
+## Stop Docker Container
+```bash
+docker stop hiresphere-db
+docker rm hiresphere-db
+```
+
+## Dependencies (Automatically Managed by Maven)
+- MySQL Connector/J 8.0.33
+- Java 11+
+- Spring Framework (optional, not currently used)
 
 ---
-**Note**: Make sure MySQL is running before executing the project.
+**Status**: ✅ Fully Tested and Working
+**Last Verified**: February 17, 2026
