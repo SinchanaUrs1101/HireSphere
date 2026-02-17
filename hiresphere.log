@@ -47,3 +47,17 @@ WARNING: Restricted methods will be blocked in a future release unless native ac
 2026-02-17 22:04:45.745 DEBUG 40503 --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
 2026-02-17 22:04:45.750 DEBUG 40503 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
 2026-02-17 22:04:45.751 DEBUG 40503 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:06:15.865 DEBUG 40503 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/jobs/all", parameters={}
+2026-02-17 22:06:15.865 DEBUG 40503 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.JobRestController#getAllJobs()
+2026-02-17 22:06:16.683 DEBUG 40503 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-02-17 22:06:16.686 DEBUG 40503 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@321f53fe]
+2026-02-17 22:06:16.708 DEBUG 40503 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:06:16.729 DEBUG 40503 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2026-02-17 22:06:16.730 DEBUG 40503 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.AuthRestController#login(LoginRequest)
+2026-02-17 22:06:16.769 DEBUG 40503 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [api.LoginRequest@106e891a]
+2026-02-17 22:06:16.838 DEBUG 40503 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-02-17 22:06:16.839 DEBUG 40503 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@7ba9c89a]
+2026-02-17 22:06:16.844 DEBUG 40503 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-02-17 22:06:55.024 DEBUG 40503 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/auth/register", parameters={}
+2026-02-17 22:06:55.027 DEBUG 40503 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.AuthRestController#register(RegisterRequest)
+2026-02-17 22:06:55.029 DEBUG 40503 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
