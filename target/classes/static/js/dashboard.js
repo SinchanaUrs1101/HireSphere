@@ -52,12 +52,14 @@ function updateProfileDisplay() {
 // Load all jobs
 async function loadJobs() {
     const jobsList = document.getElementById('jobsList');
+    const jobsCountLabel = document.getElementById('jobsCount');
     jobsList.innerHTML = '<p>Loading jobs...</p>';
 
     const response = await getAllJobs();
 
     if (response.success && response.data) {
         jobsList.innerHTML = '';
+        jobsCountLabel.textContent = response.data.length;
         
         if (response.data.length === 0) {
             jobsList.innerHTML = '<p>No jobs available at the moment.</p>';
@@ -69,6 +71,7 @@ async function loadJobs() {
             jobsList.appendChild(jobCard);
         });
     } else {
+        jobsCountLabel.textContent = '0';
         jobsList.innerHTML = '<p>Error loading jobs. Please try again.</p>';
     }
 }

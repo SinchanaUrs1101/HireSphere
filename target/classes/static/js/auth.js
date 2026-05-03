@@ -6,12 +6,20 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 // Toggle between login and register forms
-function toggleForms() {
+function toggleForms(target) {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
 
-    loginForm.classList.toggle('active');
-    registerForm.classList.toggle('active');
+    if (target === 'login') {
+        loginForm.classList.add('active');
+        registerForm.classList.remove('active');
+    } else if (target === 'register') {
+        registerForm.classList.add('active');
+        loginForm.classList.remove('active');
+    } else {
+        loginForm.classList.toggle('active');
+        registerForm.classList.toggle('active');
+    }
 
     // Clear messages when switching
     clearMessage('loginMessage');

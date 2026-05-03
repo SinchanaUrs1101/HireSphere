@@ -310,29 +310,72 @@ body.dashboard-body {
     width: 100%;
 }
 
+.dashboard-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 0 24px;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.hero-copy h1 {
+    margin: 0;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    line-height: 1.05;
+}
+
+.hero-copy p {
+    color: #e2e8f0;
+    margin-top: 12px;
+    max-width: 560px;
+    line-height: 1.8;
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.summary-card {
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    color: #1f2937;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}
+
+.summary-card .card-title {
+    display: block;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+.summary-card strong {
+    display: block;
+    font-size: 2rem;
+    color: #111827;
+}
+
 /* Responsive */
-@media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
-
-    .jobs-grid {
+@media (max-width: 1024px) {
+    .hero-inner {
         grid-template-columns: 1fr;
     }
+}
 
-    .nav-menu {
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto;
+@media (max-width: 768px) {
+    .dashboard-hero {
+        padding: 32px 0 20px;
     }
 
-    .nav-item {
-        flex-shrink: 0;
+    .hero-inner {
+        gap: 20px;
     }
 }
 
