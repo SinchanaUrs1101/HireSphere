@@ -223,6 +223,37 @@ body {
     background: #dc2626;
 }
 
+/* Message styles */
+.message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+}
+
+.message.success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+    display: block;
+}
+
+.message.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+    display: block;
+}
+
+.message.info {
+    background-color: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #93c5fd;
+    display: block;
+}
+
 .section-header {
     max-width: 760px;
     margin: 0 auto 32px;
