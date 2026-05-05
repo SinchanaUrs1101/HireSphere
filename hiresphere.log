@@ -96,3 +96,52 @@ nohup: ignoring input
 2026-05-05 15:34:55.752 DEBUG 13158 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
 2026-05-05 15:34:55.753 DEBUG 13158 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@34504bda]
 2026-05-05 15:34:55.756 DEBUG 13158 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-05 15:36:15.162 DEBUG 13158 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-05-05 15:36:15.163 DEBUG 13158 --- [nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-05-05 15:36:15.163 DEBUG 13158 --- [nio-8080-exec-8] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-05-05 15:36:15.164 DEBUG 13158 --- [nio-8080-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-05-05 15:36:15.164 DEBUG 13158 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-05-05 15:36:15.165 DEBUG 13158 --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:15.166 DEBUG 13158 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-05-05 15:36:15.167 DEBUG 13158 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-05 15:36:15.289 DEBUG 13158 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/js/auth.js", parameters={}
+2026-05-05 15:36:15.290 DEBUG 13158 --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:15.292 DEBUG 13158 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-05 15:36:15.313 DEBUG 13158 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/js/api.js", parameters={}
+2026-05-05 15:36:15.315 DEBUG 13158 --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:15.318 DEBUG 13158 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-05 15:36:15.392 DEBUG 13158 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
+2026-05-05 15:36:15.394 DEBUG 13158 --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:15.397 DEBUG 13158 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-05 15:36:15.658 DEBUG 13158 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/dashboard.html", parameters={}
+2026-05-05 15:36:15.660 DEBUG 13158 --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:15.663 DEBUG 13158 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-05 15:36:15.814 DEBUG 13158 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/js/dashboard.js", parameters={}
+2026-05-05 15:36:15.818 DEBUG 13158 --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:15.821 DEBUG 13158 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-05 15:36:15.823 DEBUG 13158 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/css/dashboard.css", parameters={}
+2026-05-05 15:36:15.825 DEBUG 13158 --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:15.828 DEBUG 13158 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-05 15:36:15.833 DEBUG 13158 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/js/api.js", parameters={}
+2026-05-05 15:36:15.836 DEBUG 13158 --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:15.837 DEBUG 13158 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
+2026-05-05 15:36:15.838 DEBUG 13158 --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:15.839 DEBUG 13158 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-05-05 15:36:15.838 DEBUG 13158 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-05-05 15:36:16.039 DEBUG 13158 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/jobs/all", parameters={}
+2026-05-05 15:36:16.040 DEBUG 13158 --- [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.JobRestController#getAllJobs()
+2026-05-05 15:36:16.077 DEBUG 13158 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-05-05 15:36:16.077 DEBUG 13158 --- [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@3015f48a]
+2026-05-05 15:36:16.079 DEBUG 13158 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-05 15:36:22.252 DEBUG 13158 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2026-05-05 15:36:22.253 DEBUG 13158 --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:22.257 DEBUG 13158 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-05 15:36:22.360 DEBUG 13158 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
+2026-05-05 15:36:22.361 DEBUG 13158 --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:22.362 DEBUG 13158 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-05-05 15:36:22.367 DEBUG 13158 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/js/api.js", parameters={}
+2026-05-05 15:36:22.368 DEBUG 13158 --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:22.369 DEBUG 13158 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-05-05 15:36:22.369 DEBUG 13158 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/js/auth.js", parameters={}
+2026-05-05 15:36:22.371 DEBUG 13158 --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-05 15:36:22.372 DEBUG 13158 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
