@@ -19,14 +19,10 @@ public class DBConnection {
     public static Connection getConnection() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(MYSQL_URL, MYSQL_USER, MYSQL_PASSWORD);
-            System.out.println("Successfully connected to MySQL database.");
-            return conn;
-        } catch (Exception mysqlEx) {
-            System.out.println("Could not connect to MySQL; falling back to embedded H2 database. Error: " + mysqlEx.getMessage());
-            mysqlEx.printStackTrace();
-            return getH2Connection();
+        } catch (ClassNotFoundException e) {
+            throw new SQLException("MySQL driver not found", e);
         }
+        return DriverManager.getConnection(MYSQL_URL, MYSQL_USER, MYSQL_PASSWORD);
     }
 
     private static Connection getH2Connection() throws SQLException {

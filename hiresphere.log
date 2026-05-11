@@ -8,72 +8,82 @@ nohup: ignoring input
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::               (v2.7.14)
 
-2026-05-11 04:07:14.736  INFO 8648 --- [           main] config.HireSphereApplication             : Starting HireSphereApplication v1.0.0 using Java 11.0.14.1 on codespaces-c02773 with PID 8648 (/workspaces/HireSphere/target/hiresphere-1.0.0.jar started by codespace in /workspaces/HireSphere)
-2026-05-11 04:07:14.750  INFO 8648 --- [           main] config.HireSphereApplication             : No active profile set, falling back to 1 default profile: "default"
-2026-05-11 04:07:16.481  INFO 8648 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2026-05-11 04:07:16.496  INFO 8648 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-11 04:07:16.496  INFO 8648 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
-2026-05-11 04:07:16.676  INFO 8648 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-11 04:07:16.677  INFO 8648 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1677 ms
-2026-05-11 04:07:17.111 DEBUG 8648 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-05-11 04:07:17.172  INFO 8648 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2026-05-11 04:07:17.332 DEBUG 8648 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
-2026-05-11 04:07:17.363 DEBUG 8648 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2026-05-11 04:07:17.377 DEBUG 8648 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-05-11 04:07:17.559  INFO 8648 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2026-05-11 04:07:17.595  INFO 8648 --- [           main] config.HireSphereApplication             : Started HireSphereApplication in 4.285 seconds (JVM running for 5.026)
-2026-05-11 04:07:43.383  INFO 8648 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-11 04:07:43.383  INFO 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-11 04:07:43.383 DEBUG 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2026-05-11 04:07:43.383 DEBUG 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2026-05-11 04:07:43.383 DEBUG 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2026-05-11 04:07:43.387 DEBUG 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@153e651b
-2026-05-11 04:07:43.388 DEBUG 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@49bc8f81
-2026-05-11 04:07:43.388 DEBUG 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2026-05-11 04:07:43.389  INFO 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2026-05-11 04:07:43.417 DEBUG 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
-2026-05-11 04:07:43.457 DEBUG 8648 --- [nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
-2026-05-11 04:07:43.458 DEBUG 8648 --- [nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
-2026-05-11 04:07:43.459 DEBUG 8648 --- [nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
-2026-05-11 04:07:43.463 DEBUG 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
-2026-05-11 04:07:43.469 DEBUG 8648 --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-05-11 04:07:43.492 DEBUG 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
-2026-05-11 04:07:43.494 DEBUG 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-05-11 04:07:43.998 DEBUG 8648 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/js/auth.js", parameters={}
-2026-05-11 04:07:43.999 DEBUG 8648 --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-05-11 04:07:44.011 DEBUG 8648 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
-2026-05-11 04:07:44.023 DEBUG 8648 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/js/api.js", parameters={}
-2026-05-11 04:07:44.025 DEBUG 8648 --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-05-11 04:07:44.027 DEBUG 8648 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
-2026-05-11 04:07:44.032 DEBUG 8648 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
-2026-05-11 04:07:44.033 DEBUG 8648 --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-05-11 04:07:44.037 DEBUG 8648 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
-2026-05-11 04:07:44.516 DEBUG 8648 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/dashboard.html", parameters={}
-2026-05-11 04:07:44.519 DEBUG 8648 --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-05-11 04:07:44.524 DEBUG 8648 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-05-11 04:07:44.885 DEBUG 8648 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/css/dashboard.css", parameters={}
-2026-05-11 04:07:44.887 DEBUG 8648 --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-05-11 04:07:44.888 DEBUG 8648 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
-2026-05-11 04:07:44.905 DEBUG 8648 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/js/dashboard.js", parameters={}
-2026-05-11 04:07:44.906 DEBUG 8648 --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-05-11 04:07:44.907 DEBUG 8648 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
-2026-05-11 04:07:45.179 DEBUG 8648 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/jobs/all", parameters={}
-2026-05-11 04:07:45.180 DEBUG 8648 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.JobRestController#getAllJobs()
-2026-05-11 04:07:46.109 DEBUG 8648 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2026-05-11 04:07:46.110 DEBUG 8648 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@262e7fae]
-2026-05-11 04:07:46.134 DEBUG 8648 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-05-11 04:07:50.467 DEBUG 8648 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
-2026-05-11 04:07:50.468 DEBUG 8648 --- [nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2026-05-11 04:07:50.469 DEBUG 8648 --- [nio-8080-exec-9] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
-2026-05-11 04:07:50.469 DEBUG 8648 --- [nio-8080-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
-2026-05-11 04:07:50.469 DEBUG 8648 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
-2026-05-11 04:07:50.470 DEBUG 8648 --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-05-11 04:07:50.474 DEBUG 8648 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
-2026-05-11 04:07:50.475 DEBUG 8648 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-05-11 04:08:14.893 DEBUG 8648 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
-2026-05-11 04:08:14.893 DEBUG 8648 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.AuthRestController#register(RegisterRequest)
-2026-05-11 04:08:14.928 DEBUG 8648 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [api.RegisterRequest@1e18c84]
-java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'test@example.com' for key 'users.email'
+2026-05-11 04:12:09.370  INFO 11724 --- [           main] config.HireSphereApplication             : Starting HireSphereApplication v1.0.0 using Java 11.0.14.1 on codespaces-c02773 with PID 11724 (/workspaces/HireSphere/target/hiresphere-1.0.0.jar started by codespace in /workspaces/HireSphere)
+2026-05-11 04:12:09.384  INFO 11724 --- [           main] config.HireSphereApplication             : No active profile set, falling back to 1 default profile: "default"
+2026-05-11 04:12:10.959  INFO 11724 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-05-11 04:12:10.970  INFO 11724 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11 04:12:10.971  INFO 11724 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2026-05-11 04:12:11.072  INFO 11724 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-11 04:12:11.075  INFO 11724 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1560 ms
+2026-05-11 04:12:11.314 DEBUG 11724 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-11 04:12:11.366  INFO 11724 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-05-11 04:12:11.478 DEBUG 11724 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2026-05-11 04:12:11.498 DEBUG 11724 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-05-11 04:12:11.507 DEBUG 11724 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-11 04:12:11.648  INFO 11724 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-05-11 04:12:11.663  INFO 11724 --- [           main] config.HireSphereApplication             : Started HireSphereApplication in 3.745 seconds (JVM running for 4.863)
+2026-05-11 04:12:19.505  INFO 11724 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-11 04:12:19.506  INFO 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-11 04:12:19.506 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-05-11 04:12:19.506 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-05-11 04:12:19.506 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2026-05-11 04:12:19.508 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7c757d93
+2026-05-11 04:12:19.509 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5f441e00
+2026-05-11 04:12:19.510 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-11 04:12:19.510  INFO 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-05-11 04:12:19.536 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-05-11 04:12:19.551 DEBUG 11724 --- [nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-05-11 04:12:19.551 DEBUG 11724 --- [nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-05-11 04:12:19.552 DEBUG 11724 --- [nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-05-11 04:12:19.556 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-05-11 04:12:19.560 DEBUG 11724 --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:12:19.573 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-05-11 04:12:19.574 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:12:19.971 DEBUG 11724 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
+2026-05-11 04:12:19.973 DEBUG 11724 --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:12:19.978 DEBUG 11724 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:12:20.030 DEBUG 11724 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/js/auth.js", parameters={}
+2026-05-11 04:12:20.032 DEBUG 11724 --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:12:20.034 DEBUG 11724 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/js/api.js", parameters={}
+2026-05-11 04:12:20.035 DEBUG 11724 --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:12:20.037 DEBUG 11724 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:12:20.038 DEBUG 11724 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:12:20.304 DEBUG 11724 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/dashboard.html", parameters={}
+2026-05-11 04:12:20.306 DEBUG 11724 --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:12:20.307 DEBUG 11724 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:12:20.419 DEBUG 11724 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/js/dashboard.js", parameters={}
+2026-05-11 04:12:20.425 DEBUG 11724 --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:12:20.432 DEBUG 11724 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:12:20.556 DEBUG 11724 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/css/dashboard.css", parameters={}
+2026-05-11 04:12:20.557 DEBUG 11724 --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:12:20.561 DEBUG 11724 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:12:20.766 DEBUG 11724 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/jobs/all", parameters={}
+2026-05-11 04:12:20.768 DEBUG 11724 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.JobRestController#getAllJobs()
+2026-05-11 04:12:21.290 DEBUG 11724 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-05-11 04:12:21.291 DEBUG 11724 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@f758948]
+2026-05-11 04:12:21.308 DEBUG 11724 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:12:24.817 DEBUG 11724 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2026-05-11 04:12:24.818 DEBUG 11724 --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:12:24.820 DEBUG 11724 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:12:24.917 DEBUG 11724 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
+2026-05-11 04:12:24.918 DEBUG 11724 --- [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:12:24.920 DEBUG 11724 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-05-11 04:12:24.923 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/js/api.js", parameters={}
+2026-05-11 04:12:24.924 DEBUG 11724 --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:12:24.925 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-05-11 04:12:25.082 DEBUG 11724 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/js/auth.js", parameters={}
+2026-05-11 04:12:25.083 DEBUG 11724 --- [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:12:25.083 DEBUG 11724 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-05-11 04:12:54.695 DEBUG 11724 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
+2026-05-11 04:12:54.695 DEBUG 11724 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.AuthRestController#register(RegisterRequest)
+2026-05-11 04:12:54.738 DEBUG 11724 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [api.RegisterRequest@5fc28dcc]
+2026-05-11 04:12:54.789 DEBUG 11724 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
+2026-05-11 04:12:54.793 DEBUG 11724 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.AuthRestController#register(RegisterRequest)
+2026-05-11 04:12:54.795 DEBUG 11724 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [api.RegisterRequest@60d9d092]
+2026-05-11 04:12:54.877 DEBUG 11724 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-05-11 04:12:54.879 DEBUG 11724 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@70d9ce92]
+2026-05-11 04:12:54.884 DEBUG 11724 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'ananya@gmail.com' for key 'users.email'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
 	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
@@ -134,20 +144,195 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'test@example
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-2026-05-11 04:08:15.026 DEBUG 8648 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2026-05-11 04:08:15.026 DEBUG 8648 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@405a155]
-2026-05-11 04:08:15.027 DEBUG 8648 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-05-11 04:08:28.131 DEBUG 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
-2026-05-11 04:08:28.133 DEBUG 8648 --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2026-05-11 04:08:28.135 DEBUG 8648 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
-2026-05-11 04:08:30.841 DEBUG 8648 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
-2026-05-11 04:08:30.841 DEBUG 8648 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.AuthRestController#login(LoginRequest)
-2026-05-11 04:08:30.849 DEBUG 8648 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [api.LoginRequest@5c3b9141]
-2026-05-11 04:08:30.889 DEBUG 8648 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2026-05-11 04:08:30.889 DEBUG 8648 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@61572870]
-2026-05-11 04:08:30.892 DEBUG 8648 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-05-11 04:08:32.601 DEBUG 8648 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/jobs/all", parameters={}
-2026-05-11 04:08:32.601 DEBUG 8648 --- [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.JobRestController#getAllJobs()
-2026-05-11 04:08:32.643 DEBUG 8648 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2026-05-11 04:08:32.643 DEBUG 8648 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@53335c82]
-2026-05-11 04:08:32.646 DEBUG 8648 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:12:54.932 DEBUG 11724 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-05-11 04:12:54.933 DEBUG 11724 --- [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@644d4c5f]
+2026-05-11 04:12:54.937 DEBUG 11724 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:13:18.931 DEBUG 11724 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2026-05-11 04:13:18.932 DEBUG 11724 --- [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.AuthRestController#login(LoginRequest)
+2026-05-11 04:13:18.934 DEBUG 11724 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [api.LoginRequest@19223565]
+2026-05-11 04:13:18.973 DEBUG 11724 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-05-11 04:13:18.974 DEBUG 11724 --- [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@1974e9ae]
+2026-05-11 04:13:18.977 DEBUG 11724 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:13:23.626 DEBUG 11724 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
+2026-05-11 04:13:23.626 DEBUG 11724 --- [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.AuthRestController#register(RegisterRequest)
+2026-05-11 04:13:23.627 DEBUG 11724 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [api.RegisterRequest@391cfc9f]
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'test2@example.com' for key 'users.email'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at dao.UserDAO.registerUser(UserDAO.java:16)
+	at controller.AuthController.registerUser(AuthController.java:21)
+	at api.AuthRestController.register(AuthRestController.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2026-05-11 04:13:23.660 DEBUG 11724 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-05-11 04:13:23.660 DEBUG 11724 --- [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@47dae801]
+2026-05-11 04:13:23.661 DEBUG 11724 --- [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:13:30.705 DEBUG 11724 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
+2026-05-11 04:13:30.705 DEBUG 11724 --- [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.AuthRestController#register(RegisterRequest)
+2026-05-11 04:13:30.706 DEBUG 11724 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [api.RegisterRequest@28ed5628]
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'test3@example.com' for key 'users.email'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at dao.UserDAO.registerUser(UserDAO.java:16)
+	at controller.AuthController.registerUser(AuthController.java:21)
+	at api.AuthRestController.register(AuthRestController.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2026-05-11 04:13:30.752 DEBUG 11724 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-05-11 04:13:30.752 DEBUG 11724 --- [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@1ebdd70f]
+2026-05-11 04:13:30.753 DEBUG 11724 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:14:19.354 DEBUG 11724 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-05-11 04:14:19.356 DEBUG 11724 --- [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2026-05-11 04:14:19.356 DEBUG 11724 --- [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : View name 'forward:', model {}
+2026-05-11 04:14:19.357 DEBUG 11724 --- [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2026-05-11 04:14:19.357 DEBUG 11724 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-05-11 04:14:19.358 DEBUG 11724 --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:14:19.359 DEBUG 11724 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2026-05-11 04:14:19.359 DEBUG 11724 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:14:19.573 DEBUG 11724 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
+2026-05-11 04:14:19.574 DEBUG 11724 --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:14:19.577 DEBUG 11724 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:14:19.579 DEBUG 11724 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/js/auth.js", parameters={}
+2026-05-11 04:14:19.581 DEBUG 11724 --- [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:14:19.583 DEBUG 11724 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:14:19.585 DEBUG 11724 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/js/api.js", parameters={}
+2026-05-11 04:14:19.586 DEBUG 11724 --- [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:14:19.589 DEBUG 11724 --- [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:14:38.563 DEBUG 11724 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
+2026-05-11 04:14:38.564 DEBUG 11724 --- [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.AuthRestController#register(RegisterRequest)
+2026-05-11 04:14:38.565 DEBUG 11724 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [api.RegisterRequest@549fd53e]
+2026-05-11 04:14:38.608 DEBUG 11724 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-05-11 04:14:38.609 DEBUG 11724 --- [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@e619dbc]
+2026-05-11 04:14:38.610 DEBUG 11724 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:14:50.125 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2026-05-11 04:14:50.126 DEBUG 11724 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.AuthRestController#login(LoginRequest)
+2026-05-11 04:14:50.127 DEBUG 11724 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [api.LoginRequest@5e87cf91]
+2026-05-11 04:14:50.150 DEBUG 11724 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-05-11 04:14:50.150 DEBUG 11724 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@22dd7f67]
+2026-05-11 04:14:50.154 DEBUG 11724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:14:51.824 DEBUG 11724 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/dashboard.html", parameters={}
+2026-05-11 04:14:51.825 DEBUG 11724 --- [nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:14:51.826 DEBUG 11724 --- [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:14:51.934 DEBUG 11724 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/css/style.css", parameters={}
+2026-05-11 04:14:51.935 DEBUG 11724 --- [nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:14:51.936 DEBUG 11724 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-05-11 04:14:51.947 DEBUG 11724 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/js/api.js", parameters={}
+2026-05-11 04:14:51.950 DEBUG 11724 --- [nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:14:51.951 DEBUG 11724 --- [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-05-11 04:14:51.962 DEBUG 11724 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/css/dashboard.css", parameters={}
+2026-05-11 04:14:51.963 DEBUG 11724 --- [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:14:51.966 DEBUG 11724 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:14:51.967 DEBUG 11724 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/js/dashboard.js", parameters={}
+2026-05-11 04:14:51.967 DEBUG 11724 --- [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-05-11 04:14:51.968 DEBUG 11724 --- [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-05-11 04:14:52.104 DEBUG 11724 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/jobs/all", parameters={}
+2026-05-11 04:14:52.104 DEBUG 11724 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to api.JobRestController#getAllJobs()
+2026-05-11 04:14:52.127 DEBUG 11724 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2026-05-11 04:14:52.128 DEBUG 11724 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [api.ApiResponse@5e71fab4]
+2026-05-11 04:14:52.129 DEBUG 11724 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
