@@ -70,207 +70,208 @@ HireSphere/
 # 1. Start MySQL in Docker
 docker run -d --name hiresphere-db \
   -e MYSQL_ROOT_PASSWORD=password \
-  -e MYSQL_DATABASE=hiresphere \
-  -p 3306:3306 \
-  mysql:8.0
+    -e MYSQL_DATABASE=hiresphere \
+      -p 3306:3306 \
+        mysql:8.0
 
-# 2. Wait for MySQL initialization
-sleep 10
+        # 2. Wait for MySQL initialization
+        sleep 10
 
-# 3. Import database schema
-docker exec -i hiresphere-db mysql -uroot -ppassword hiresphere < database.sql
+        # 3. Import database schema
+        docker exec -i hiresphere-db mysql -uroot -ppassword hiresphere < database.sql
 
-# 4. Build the project
-mvn clean package -DskipTests
+        # 4. Build the project
+        mvn clean package -DskipTests
 
-# 5. Run the application
-java -jar target/hiresphere-1.0.0.jar
-```
+        # 5. Run the application
+        java -jar target/hiresphere-1.0.0.jar
+        ```
 
-### Expected Output
-```
-=== HireSphere Application ===
+        ### Expected Output
+        ```
+        === HireSphere Application ===
 
-Recruiter registered: true
-Job Seeker registered: true
+        Recruiter registered: true
+        Job Seeker registered: true
 
-Logged in as: John Recruiter (Recruiter)
-Job posted: true
+        Logged in as: John Recruiter (Recruiter)
+        Job posted: true
 
-All Jobs:
-- Java Developer at Tech Company
-```
+        All Jobs:
+        - Java Developer at Tech Company
+        ```
 
-## Building from Source
+        ## Building from Source
 
-### Prerequisites
-- Java 11 or higher
-- Maven 3.8 or higher
-- MySQL 8.0 (or Docker)
+        ### Prerequisites
+        - Java 11 or higher
+        - Maven 3.8 or higher
+        - MySQL 8.0 (or Docker)
 
-### Build Steps
+        ### Build Steps
 
-```bash
-# Clone the repository
-cd /workspaces/HireSphere
+        ```bash
+        # Clone the repository
+        cd /workspaces/HireSphere
 
-# Compile and package
-mvn clean package -DskipTests
+        # Compile and package
+        mvn clean package -DskipTests
 
-# Run the application
-java -jar target/hiresphere-1.0.0.jar
-```
+        # Run the application
+        java -jar target/hiresphere-1.0.0.jar
+        ```
 
-## Database Configuration
+        ## Database Configuration
 
-Edit `src/dao/DBConnection.java` to configure database connection:
+        Edit `src/dao/DBConnection.java` to configure database connection:
 
-```java
-private static final String URL = "jdbc:mysql://localhost:3306/hiresphere";
-private static final String USER = "root";
-private static final String PASSWORD = "password";
-```
+        ```java
+        private static final String URL = "jdbc:mysql://localhost:3306/hiresphere";
+        private static final String USER = "root";
+        private static final String PASSWORD = "password";
+        ```
 
-## Database Schema
+        ## Database Schema
 
-### Users Table
-```sql
-CREATE TABLE users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100),
-    email VARCHAR(100) UNIQUE,
-    password VARCHAR(100),
-    role VARCHAR(20)
-);
-```
+        ### Users Table
+        ```sql
+        CREATE TABLE users (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+                name VARCHAR(100),
+                    email VARCHAR(100) UNIQUE,
+                        password VARCHAR(100),
+                            role VARCHAR(20)
+                            );
+                            ```
 
-### Jobs Table
-```sql
-CREATE TABLE jobs (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(100),
-    description TEXT,
-    company VARCHAR(100),
-    posted_by INT,
-    FOREIGN KEY (posted_by) REFERENCES users(id)
-);
-```
+                            ### Jobs Table
+                            ```sql
+                            CREATE TABLE jobs (
+                                id INT PRIMARY KEY AUTO_INCREMENT,
+                                    title VARCHAR(100),
+                                        description TEXT,
+                                            company VARCHAR(100),
+                                                posted_by INT,
+                                                    FOREIGN KEY (posted_by) REFERENCES users(id)
+                                                    );
+                                                    ```
 
-### Applications Table
-```sql
-CREATE TABLE applications (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT,
-    job_id INT,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (job_id) REFERENCES jobs(id)
-);
-```
+                                                    ### Applications Table
+                                                    ```sql
+                                                    CREATE TABLE applications (
+                                                        id INT PRIMARY KEY AUTO_INCREMENT,
+                                                            user_id INT,
+                                                                job_id INT,
+                                                                    FOREIGN KEY (user_id) REFERENCES users(id),
+                                                                        FOREIGN KEY (job_id) REFERENCES jobs(id)
+                                                                        );
+                                                                        ```
 
-## Usage Examples
+                                                                        ## Usage Examples
 
-### Register a User
-```java
-AuthController auth = new AuthController();
-boolean success = auth.registerUser("John Doe", "john@example.com", "pass123", "Recruiter");
-```
+                                                                        ### Register a User
+                                                                        ```java
+                                                                        AuthController auth = new AuthController();
+                                                                        boolean success = auth.registerUser("John Doe", "john@example.com", "pass123", "Recruiter");
+                                                                        ```
 
-### Login
-```java
-User user = auth.loginUser("john@example.com", "pass123");
-if (user != null) {
-    System.out.println("Welcome, " + user.getName());
-}
-```
+                                                                        ### Login
+                                                                        ```java
+                                                                        User user = auth.loginUser("john@example.com", "pass123");
+                                                                        if (user != null) {
+                                                                            System.out.println("Welcome, " + user.getName());
+                                                                            }
+                                                                            ```
 
-### Post a Job
-```java
-JobController jobs = new JobController();
-boolean posted = jobs.postJob(
-    "Senior Java Developer",
-    "Looking for experienced Java developer",
-    "Tech Company",
-    1  // recruiter user ID
-);
-```
+                                                                            ### Post a Job
+                                                                            ```java
+                                                                            JobController jobs = new JobController();
+                                                                            boolean posted = jobs.postJob(
+                                                                                "Senior Java Developer",
+                                                                                    "Looking for experienced Java developer",
+                                                                                        "Tech Company",
+                                                                                            1  // recruiter user ID
+                                                                                            );
+                                                                                            ```
 
-### Get All Jobs
-```java
-List<Job> allJobs = jobs.getAllJobs();
-for (Job job : allJobs) {
-    System.out.println(job.getTitle() + " at " + job.getCompany());
-}
-```
+                                                                                            ### Get All Jobs
+                                                                                            ```java
+                                                                                            List<Job> allJobs = jobs.getAllJobs();
+                                                                                            for (Job job : allJobs) {
+                                                                                                System.out.println(job.getTitle() + " at " + job.getCompany());
+                                                                                                }
+                                                                                                ```
 
-## Docker Commands
+                                                                                                ## Docker Commands
 
-### Start Database
-```bash
-docker run -d --name hiresphere-db \
-  -e MYSQL_ROOT_PASSWORD=password \
-  -e MYSQL_DATABASE=hiresphere \
-  -p 3306:3306 \
-  mysql:8.0
-```
+                                                                                                ### Start Database
+                                                                                                ```bash
+                                                                                                docker run -d --name hiresphere-db \
+                                                                                                  -e MYSQL_ROOT_PASSWORD=password \
+                                                                                                    -e MYSQL_DATABASE=hiresphere \
+                                                                                                      -p 3306:3306 \
+                                                                                                        mysql:8.0
+                                                                                                        ```
 
-### Stop Database
-```bash
-docker stop hiresphere-db
-```
+                                                                                                        ### Stop Database
+                                                                                                        ```bash
+                                                                                                        docker stop hiresphere-db
+                                                                                                        ```
 
-### Remove Container
-```bash
-docker rm hiresphere-db
-```
+                                                                                                        ### Remove Container
+                                                                                                        ```bash
+                                                                                                        docker rm hiresphere-db
+                                                                                                        ```
 
-### View Logs
-```bash
-docker logs hiresphere-db
-```
+                                                                                                        ### View Logs
+                                                                                                        ```bash
+                                                                                                        docker logs hiresphere-db
+                                                                                                        ```
 
-## Database Verification
+                                                                                                        ## Database Verification
 
-### Check Tables
-```bash
-docker exec hiresphere-db mysql -uroot -ppassword hiresphere -e "SHOW TABLES;"
-```
+                                                                                                        ### Check Tables
+                                                                                                        ```bash
+                                                                                                        docker exec hiresphere-db mysql -uroot -ppassword hiresphere -e "SHOW TABLES;"
+                                                                                                        ```
 
-### View All Users
-```bash
-docker exec hiresphere-db mysql -uroot -ppassword hiresphere -e "SELECT * FROM users;"
-```
+                                                                                                        ### View All Users
+                                                                                                        ```bash
+                                                                                                        docker exec hiresphere-db mysql -uroot -ppassword hiresphere -e "SELECT * FROM users;"
+                                                                                                        ```
 
-### View All Jobs
-```bash
-docker exec hiresphere-db mysql -uroot -ppassword hiresphere -e "SELECT * FROM jobs;"
-```
+                                                                                                        ### View All Jobs
+                                                                                                        ```bash
+                                                                                                        docker exec hiresphere-db mysql -uroot -ppassword hiresphere -e "SELECT * FROM jobs;"
+                                                                                                        ```
 
-## Project Status
+                                                                                                        ## Project Status
 
-✅ **Fully Functional**
-- Database schema created and tested
-- All CRUD operations working
-- User authentication implemented
-- Job posting and retrieval functional
-- Data persistence verified
+                                                                                                        ✅ **Fully Functional**
+                                                                                                        - Database schema created and tested
+                                                                                                        - All CRUD operations working
+                                                                                                        - User authentication implemented
+                                                                                                        - Job posting and retrieval functional
+                                                                                                        - Data persistence verified
 
-**Last Updated**: February 17, 2026
+                                                                                                        **Last Updated**: February 17, 2026
 
-## Future Enhancements
+                                                                                                        ## Future Enhancements
 
-- [ ] Web UI (Spring MVC/JSP)
-- [ ] REST API (Spring Boot)
-- [ ] Advanced search and filtering
-- [ ] Application status management
-- [ ] Email notifications
-- [ ] User profile enhancement
-- [ ] Admin dashboard
-- [ ] Unit tests and integration tests
+                                                                                                        - [ ] Web UI (Spring MVC/JSP)
+                                                                                                        - [ ] REST API (Spring Boot)
+                                                                                                        - [ ] Advanced search and filtering
+                                                                                                        - [ ] Application status management
+                                                                                                        - [ ] Email notifications
+                                                                                                        - [ ] User profile enhancement
+                                                                                                        - [ ] Admin dashboard
+                                                                                                        - [ ] Unit tests and integration tests
 
-## License
+                                                                                                        ## License
 
-This project is open source and available under the MIT License.
+                                                                                                        This project is open source and available under the MIT License.
 
-## Support
+                                                                                                        ## Support
 
-For issues or questions, please see [SETUP.md](SETUP.md) for detailed setup instructions.
+                                                                                                        For issues or questions, please see [SETUP.md](SETUP.md) for detailed setup instructions.
+                                                                                                        
