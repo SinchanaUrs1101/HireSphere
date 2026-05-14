@@ -1,5 +1,8 @@
 let currentUser = null;
 let selectedJobId = null;
+let selectedJob = null;
+let allJobs = [];
+let notifications = [];
 
 // Initialize dashboard
 window.addEventListener('DOMContentLoaded', function() {
@@ -28,6 +31,11 @@ function initializeDashboard() {
     } else {
         postJobTab.classList.add('hidden');
     }
+
+    // Load notifications first so new jobs can be synced
+    loadNotifications();
+    syncJobSeekerNotifications();
+    renderNotifications();
 
     // Load jobs
     loadJobs();
@@ -58,6 +66,7 @@ async function loadJobs() {
     const response = await getAllJobs();
 
     if (response.success && response.data) {
+        allJobs = response.data;
         jobsList.innerHTML = '';
         jobsCountLabel.textContent = response.data.length;
         
@@ -71,6 +80,7 @@ async function loadJobs() {
             jobsList.appendChild(jobCard);
         });
     } else {
+        allJobs = [];
         jobsCountLabel.textContent = '0';
         jobsList.innerHTML = '<p>Error loading jobs. Please try again.</p>';
     }
@@ -95,32 +105,27 @@ function createJobCard(job) {
 // Show job details in modal
 function showJobDetails(jobId) {
     selectedJobId = jobId;
+    selectedJob = allJobs.find(j => j.id === jobId);
     const modal = document.getElementById('jobModal');
 
-    // Find job from loaded jobs
-    const response = getAllJobs().then(res => {
-        if (res.success && res.data) {
-            const job = res.data.find(j => j.id === jobId);
-            if (job) {
-                const jobDetailsDiv = document.getElementById('jobDetails');
-                jobDetailsDiv.innerHTML = `
-                    <h2>${job.title}</h2>
-                    <p class="company-name">${job.company}</p>
-                    <p class="description">${job.description}</p>
-                `;
+    if (selectedJob) {
+        const jobDetailsDiv = document.getElementById('jobDetails');
+        jobDetailsDiv.innerHTML = `
+            <h2>${selectedJob.title}</h2>
+            <p class="company-name">${selectedJob.company}</p>
+            <p class="description">${selectedJob.description}</p>
+        `;
 
-                // Hide apply button for recruiters
-                const applySection = document.querySelector('.apply-section');
-                if (currentUser.role === 'Recruiter') {
-                    applySection.style.display = 'none';
-                } else {
-                    applySection.style.display = 'block';
-                }
-
-                modal.classList.add('active');
-            }
+        // Hide apply button for recruiters
+        const applySection = document.querySelector('.apply-section');
+        if (currentUser.role === 'Recruiter') {
+            applySection.style.display = 'none';
+        } else {
+            applySection.style.display = 'block';
         }
-    });
+
+        modal.classList.add('active');
+    }
 }
 
 // Close job modal
@@ -132,16 +137,30 @@ function closeJobModal() {
 }
 
 // Handle apply job
-function handleApplyJob() {
-    if (selectedJobId) {
-        const messageDiv = document.getElementById('applyMessage');
-        messageDiv.innerHTML = 'Application submitted successfully!';
-        messageDiv.className = 'message success';
-
-        setTimeout(() => {
-            closeJobModal();
-        }, 2000);
+async function handleApplyJob() {
+    if (!selectedJob || !selectedJobId) {
+        return;
     }
+
+    if (currentUser.role !== 'JobSeeker') {
+        alert('Only job seekers can apply for jobs.');
+        return;
+    }
+
+    const messageDiv = document.getElementById('applyMessage');
+    messageDiv.innerHTML = 'Sending application...';
+    messageDiv.className = 'message info';
+
+    const job = selectedJob;
+    await notifyRecruiterAboutApplication(job);
+
+    messageDiv.innerHTML = 'Application submitted successfully! The recruiter has been notified.';
+    messageDiv.className = 'message success';
+
+    setTimeout(() => {
+        closeJobModal();
+        renderNotifications();
+    }, 1800);
 }
 
 // Handle post job
@@ -165,11 +184,15 @@ async function handlePostJob(event) {
 
     if (response.success) {
         showMessage('postJobMessage', 'Job posted successfully!', 'success');
-        
-        // Clear form
         event.target.reset();
+        addGlobalJobEvent({
+            title,
+            company,
+            recruiterId: currentUser.id,
+            recruiterName: currentUser.name,
+            createdAt: Date.now()
+        });
 
-        // Reload jobs
         setTimeout(() => {
             loadJobs();
             switchTab(null, 'jobs');
@@ -218,6 +241,146 @@ function handleLogout() {
         clearCurrentUser();
         window.location.href = '/index.html';
     }
+}
+
+// Notification helpers
+function getNotificationStorageKey(userId) {
+    return `notifications_${userId}`;
+}
+
+function getGlobalJobEventsKey() {
+    return 'jobPostEvents';
+}
+
+function getLastJobEventSeenKey(userId) {
+    return `jobEventSeenAt_${userId}`;
+}
+
+function loadNotifications() {
+    const raw = localStorage.getItem(getNotificationStorageKey(currentUser.id));
+    notifications = raw ? JSON.parse(raw) : [];
+}
+
+function saveNotifications() {
+    localStorage.setItem(getNotificationStorageKey(currentUser.id), JSON.stringify(notifications));
+}
+
+function addNotificationForUser(userId, notification) {
+    const key = getNotificationStorageKey(userId);
+    const raw = localStorage.getItem(key);
+    const existing = raw ? JSON.parse(raw) : [];
+    existing.unshift(notification);
+    localStorage.setItem(key, JSON.stringify(existing));
+
+    if (userId === currentUser.id) {
+        notifications = existing;
+    }
+}
+
+function getGlobalJobEvents() {
+    const raw = localStorage.getItem(getGlobalJobEventsKey());
+    return raw ? JSON.parse(raw) : [];
+}
+
+function setGlobalJobEvents(events) {
+    localStorage.setItem(getGlobalJobEventsKey(), JSON.stringify(events));
+}
+
+function addGlobalJobEvent(event) {
+    const events = getGlobalJobEvents();
+    events.unshift(event);
+    setGlobalJobEvents(events);
+}
+
+function getLastSeenJobEventTimestamp() {
+    return Number(localStorage.getItem(getLastJobEventSeenKey(currentUser.id))) || 0;
+}
+
+function setLastSeenJobEventTimestamp(timestamp) {
+    localStorage.setItem(getLastJobEventSeenKey(currentUser.id), timestamp.toString());
+}
+
+function syncJobSeekerNotifications() {
+    if (currentUser.role !== 'JobSeeker') {
+        return;
+    }
+
+    const lastSeen = getLastSeenJobEventTimestamp();
+    const events = getGlobalJobEvents().filter(event => event.createdAt > lastSeen);
+    if (events.length === 0) {
+        return;
+    }
+
+    events.reverse().forEach(event => {
+        addNotificationForUser(currentUser.id, {
+            id: `job-${event.createdAt}`,
+            message: `New job posted: ${event.title} at ${event.company}`,
+            createdAt: event.createdAt,
+            type: 'job',
+            read: false
+        });
+    });
+
+    if (events.length > 0) {
+        setLastSeenJobEventTimestamp(Date.now());
+    }
+}
+
+async function notifyRecruiterAboutApplication(job) {
+    const profileResponse = await getUserProfile(job.postedBy);
+    const recruiterName = profileResponse.success && profileResponse.data ? profileResponse.data.name : 'Recruiter';
+    addNotificationForUser(job.postedBy, {
+        id: `application-${job.id}-${Date.now()}`,
+        message: `${currentUser.name} applied for "${job.title}" at ${job.company}.`, 
+        createdAt: Date.now(),
+        type: 'application',
+        read: false
+    });
+
+    if (job.postedBy === currentUser.id) {
+        loadNotifications();
+    }
+}
+
+function renderNotifications() {
+    const list = document.getElementById('notificationsList');
+    const badge = document.getElementById('notificationCount');
+    const unreadCount = notifications.filter(notification => !notification.read).length;
+
+    if (!list) return;
+
+    list.innerHTML = '';
+    if (notifications.length === 0) {
+        list.innerHTML = '<p class="no-notifications">No new notifications</p>';
+    } else {
+        notifications.slice(0, 5).forEach(notification => {
+            const item = document.createElement('div');
+            item.className = `notification-item ${notification.read ? 'read' : 'unread'}`;
+            item.innerHTML = `
+                <div class="notification-text">${notification.message}</div>
+                <div class="notification-meta">${new Date(notification.createdAt).toLocaleString()}</div>
+            `;
+            list.appendChild(item);
+        });
+
+        if (notifications.length > 5) {
+            const more = document.createElement('p');
+            more.className = 'notification-more';
+            more.textContent = `Showing ${Math.min(5, notifications.length)} of ${notifications.length} notifications`;
+            list.appendChild(more);
+        }
+    }
+
+    if (badge) {
+        badge.textContent = unreadCount > 0 ? unreadCount : '';
+        badge.classList.toggle('hidden', unreadCount === 0);
+    }
+}
+
+function markAllNotificationsRead() {
+    notifications = notifications.map(notification => ({ ...notification, read: true }));
+    saveNotifications();
+    renderNotifications();
 }
 
 // Show message helper
