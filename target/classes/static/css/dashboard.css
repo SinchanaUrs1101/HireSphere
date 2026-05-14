@@ -1,7 +1,36 @@
 /* Dashboard-specific styling */
 
 body {
-    color: var(--text);
+    color: var(--surface);
+    background: #12061f;
+}
+
+.dashboard-body,
+.dashboard-body h1,
+.dashboard-body h2,
+.dashboard-body h3,
+.dashboard-body p,
+.dashboard-body span,
+.dashboard-body label,
+.dashboard-body strong,
+.dashboard-body a,
+.dashboard-body input,
+.dashboard-body textarea,
+.dashboard-body button {
+    color: var(--surface) !important;
+}
+
+.dashboard-body input,
+.dashboard-body textarea,
+.dashboard-body select {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--surface) !important;
+}
+
+.dashboard-body input::placeholder,
+.dashboard-body textarea::placeholder {
+    color: rgba(242, 231, 242, 0.65) !important;
 }
 
 .navbar {
@@ -141,6 +170,10 @@ body {
     display: none;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .btn.btn-small {
     background: rgba(207, 66, 99, 0.16);
     color: var(--surface);
@@ -217,7 +250,24 @@ body {
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 24px 60px rgba(81, 49, 89, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.main-area h2,
+.main-area h3,
+.main-area p,
+.main-area span,
+.main-area label,
+.main-area strong,
+.main-area .job-card h3,
+.main-area .job-card .company,
+.main-area .job-card .description,
+.main-area .job-card .posted-by,
+.main-area .info-group p,
+.main-area .info-group label,
+.main-area .summary-card .card-title,
+.main-area .summary-card strong {
+    color: rgba(242, 231, 242, 0.98) !important;
 }
 
 .main-area h2 {
@@ -247,8 +297,8 @@ body {
 }
 
 .job-card {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 18px;
     padding: 24px;
     transition: all 0.35s ease;
@@ -260,9 +310,71 @@ body {
     transform: translateY(-4px);
 }
 
+.job-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.job-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffdede;
+    font-size: 12px;
+    font-weight: 700;
+}
+
 .job-card h3 {
     color: var(--surface);
     margin-bottom: 8px;
+}
+
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.application-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    padding: 22px;
+}
+
+.application-card h3 {
+    margin-bottom: 10px;
+    color: var(--surface);
+}
+
+.application-card .company,
+.application-card .status,
+.application-card .applied-at {
+    color: rgba(242, 231, 242, 0.95);
+    margin-bottom: 8px;
+}
+
+.application-card .status span {
+    font-weight: 700;
+    color: #fbcaca;
+}
+
+.no-applications {
+    color: rgba(242, 231, 242, 0.9);
+    font-size: 16px;
+    padding: 20px 0;
+}
+
+.btn-disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
 }
 
 .job-card .company {
@@ -307,8 +419,8 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.info-group label {
-    color: var(--primary);
+..info-group label {
+    color: rgba(242, 231, 242, 0.96);
     font-weight: 600;
     display: block;
     margin-bottom: 5px;

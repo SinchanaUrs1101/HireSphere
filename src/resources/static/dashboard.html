@@ -67,6 +67,10 @@
                     <span class="icon">📋</span>
                     <span>All Jobs</span>
                 </a>
+                <a href="#" id="applicationsTab" class="nav-item hidden" data-tab="applications" onclick="switchTab(event, 'applications')">
+                    <span class="icon">📄</span>
+                    <span>My Applications</span>
+                </a>
                 <a href="#" id="postJobTab" class="nav-item hidden" data-tab="post-job" onclick="switchTab(event, 'post-job')">
                     <span class="icon">➕</span>
                     <span>Post Job</span>
@@ -85,6 +89,15 @@
                 <div id="jobsList" class="jobs-grid">
                     <!-- Jobs will be loaded here -->
                 </div>
+            </div>
+
+            <!-- Applications Section -->
+            <div id="applications" class="tab-content">
+                <h2>My Applications</h2>
+                <div class="applications-summary">
+                    <p>Your applied jobs are shown below. The status on each application is already marked.</p>
+                </div>
+                <div id="applicationsList" class="applications-grid"></div>
             </div>
 
             <!-- Post Job Section -->

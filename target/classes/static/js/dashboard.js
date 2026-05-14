@@ -4,6 +4,14 @@ let selectedJob = null;
 let allJobs = [];
 let notifications = [];
 
+function isRecruiter() {
+    return currentUser && currentUser.role && currentUser.role.toLowerCase().includes('recruiter');
+}
+
+function isJobSeeker() {
+    return currentUser && currentUser.role && currentUser.role.toLowerCase().includes('job');
+}
+
 // Initialize dashboard
 window.addEventListener('DOMContentLoaded', function() {
     // Check if user is logged in
@@ -16,29 +24,45 @@ window.addEventListener('DOMContentLoaded', function() {
     initializeDashboard();
 });
 
-// Initialize dashboard
 function initializeDashboard() {
     // Update user greeting
     document.getElementById('userGreeting').textContent = `Welcome, ${currentUser.name}!`;
     
     // Update profile section
     updateProfileDisplay();
+    document.getElementById('roleLabel').textContent = currentUser.role;
     
-    // Show/hide post job tab based on role
+    // Show/hide post job tab and section based on role
     const postJobTab = document.getElementById('postJobTab');
-    if (currentUser.role === 'Recruiter') {
+    const postJobSection = document.getElementById('post-job');
+    if (isRecruiter()) {
         postJobTab.classList.remove('hidden');
+        if (postJobSection) {
+            postJobSection.style.display = '';
+        }
     } else {
         postJobTab.classList.add('hidden');
+        if (postJobSection) {
+            postJobSection.style.display = 'none';
+            postJobSection.classList.remove('active');
+        }
     }
 
-    // Load notifications first so new jobs can be synced
+        // Load notifications first so new jobs can be synced
     loadNotifications();
     syncJobSeekerNotifications();
     renderNotifications();
 
     // Load jobs
     loadJobs();
+
+    // Show correct tabs for each role
+    const applicationsTab = document.getElementById('applicationsTab');
+    if (isJobSeeker()) {
+        applicationsTab?.classList.remove('hidden');
+    } else {
+        applicationsTab?.classList.add('hidden');
+    }
 
     // Apply body class
     document.body.classList.add('dashboard-body');
@@ -84,6 +108,10 @@ async function loadJobs() {
         jobsCountLabel.textContent = '0';
         jobsList.innerHTML = '<p>Error loading jobs. Please try again.</p>';
     }
+
+    if (isJobSeeker()) {
+        renderApplicationsList();
+    }
 }
 
 // Create job card element
@@ -92,14 +120,30 @@ function createJobCard(job) {
     card.className = 'job-card';
     card.onclick = () => showJobDetails(job.id);
 
+    const appliedBadge = isJobSeeker() && hasAppliedToJob(job.id)
+        ? '<span class="job-status">Already Applied</span>'
+        : '';
+
     card.innerHTML = `
-        <h3>${job.title}</h3>
+        <div class="job-card-header">
+            <h3>${job.title}</h3>
+            ${appliedBadge}
+        </div>
         <p class="company">${job.company}</p>
         <p class="description">${job.description}</p>
         <p class="posted-by">Posted by: User ${job.postedBy}</p>
     `;
 
     return card;
+}
+
+function renderJobCards() {
+    const jobsList = document.getElementById('jobsList');
+    if (!jobsList) return;
+    jobsList.innerHTML = '';
+    allJobs.forEach(job => {
+        jobsList.appendChild(createJobCard(job));
+    });
 }
 
 // Show job details in modal
@@ -116,12 +160,21 @@ function showJobDetails(jobId) {
             <p class="description">${selectedJob.description}</p>
         `;
 
-        // Hide apply button for recruiters
         const applySection = document.querySelector('.apply-section');
-        if (currentUser.role === 'Recruiter') {
+        if (!isJobSeeker()) {
             applySection.style.display = 'none';
         } else {
             applySection.style.display = 'block';
+            const applyButton = applySection.querySelector('button');
+            if (hasAppliedToJob(jobId)) {
+                applyButton.textContent = 'Already Applied';
+                applyButton.disabled = true;
+                applyButton.classList.add('btn-disabled');
+            } else {
+                applyButton.textContent = 'Apply for this Job';
+                applyButton.disabled = false;
+                applyButton.classList.remove('btn-disabled');
+            }
         }
 
         modal.classList.add('active');
@@ -142,8 +195,13 @@ async function handleApplyJob() {
         return;
     }
 
-    if (currentUser.role !== 'JobSeeker') {
+    if (!isJobSeeker()) {
         alert('Only job seekers can apply for jobs.');
+        return;
+    }
+
+    if (hasAppliedToJob(selectedJobId)) {
+        showMessage('applyMessage', 'You have already applied to this job.', 'info');
         return;
     }
 
@@ -153,9 +211,12 @@ async function handleApplyJob() {
 
     const job = selectedJob;
     await notifyRecruiterAboutApplication(job);
+    addAppliedJob(job.id);
 
     messageDiv.innerHTML = 'Application submitted successfully! The recruiter has been notified.';
     messageDiv.className = 'message success';
+    renderApplicationsList();
+    await loadJobs();
 
     setTimeout(() => {
         closeJobModal();
@@ -206,6 +267,14 @@ async function handlePostJob(event) {
 function switchTab(event, tabName) {
     if (event) {
         event.preventDefault();
+    }
+
+    if (tabName === 'post-job' && !isRecruiter()) {
+        return;
+    }
+
+    if (tabName === 'applications' && !isJobSeeker()) {
+        return;
     }
 
     // Hide all tabs
@@ -301,7 +370,7 @@ function setLastSeenJobEventTimestamp(timestamp) {
 }
 
 function syncJobSeekerNotifications() {
-    if (currentUser.role !== 'JobSeeker') {
+    if (!isJobSeeker()) {
         return;
     }
 
@@ -381,6 +450,63 @@ function markAllNotificationsRead() {
     notifications = notifications.map(notification => ({ ...notification, read: true }));
     saveNotifications();
     renderNotifications();
+}
+
+function getApplicationStorageKey(userId) {
+    return `appliedJobs_${userId}`;
+}
+
+function getAppliedJobsForUser() {
+    const raw = localStorage.getItem(getApplicationStorageKey(currentUser.id));
+    return raw ? JSON.parse(raw) : [];
+}
+
+function hasAppliedToJob(jobId) {
+    return getAppliedJobsForUser().some(application => application.jobId === jobId);
+}
+
+function addAppliedJob(jobId) {
+    const key = getApplicationStorageKey(currentUser.id);
+    const applications = getAppliedJobsForUser();
+    if (!applications.some(application => application.jobId === jobId)) {
+        applications.unshift({
+            jobId,
+            appliedAt: Date.now(),
+            status: 'Already Applied'
+        });
+        localStorage.setItem(key, JSON.stringify(applications));
+    }
+}
+
+function renderApplicationsList() {
+    const applicationsList = document.getElementById('applicationsList');
+    if (!applicationsList) return;
+
+    const appliedJobs = getAppliedJobsForUser();
+    applicationsList.innerHTML = '';
+
+    if (appliedJobs.length === 0) {
+        applicationsList.innerHTML = '<p class="no-applications">No applications yet. Apply to a job and it will appear here.</p>';
+        return;
+    }
+
+    const jobsById = allJobs.reduce((map, job) => {
+        map[job.id] = job;
+        return map;
+    }, {});
+
+    appliedJobs.forEach(application => {
+        const job = jobsById[application.jobId];
+        const card = document.createElement('div');
+        card.className = 'application-card';
+        card.innerHTML = `
+            <h3>${job ? job.title : 'Job no longer available'}</h3>
+            <p class="company">${job ? job.company : 'Unknown Company'}</p>
+            <p class="status">Status: <span>${application.status}</span></p>
+            <p class="applied-at">Applied on: ${new Date(application.appliedAt).toLocaleDateString()}</p>
+        `;
+        applicationsList.appendChild(card);
+    });
 }
 
 // Show message helper
